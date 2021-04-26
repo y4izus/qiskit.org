@@ -12,9 +12,10 @@
     "test": "jest",
     "build": "npm run generate",
     "start": "NODE_ENV=production nuxt-ts start",
-    "lint": "eslint --max-warnings 0 --ext .ts,.js,.vue .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "eslint --max-warnings 0 --ext .ts,.js,.vue . && npm run lint:style",
     "generate": "NODE_ENV=production nuxt-ts generate --fail-on-error",
-    "fix-lint": "eslint --fix --ext .ts,.js,.vue ."
+    "fix-lint": "eslint --fix --ext .ts,.js,.vue . && npm run lint:style -- --fix"
   },
   "engines": {
     "node": ">=12.x"
@@ -25,7 +26,7 @@
     "@carbon/themes": "^10.32.0",
     "@carbon/vue": "^2.37.1",
     "@nuxtjs/axios": "^5.13.1",
-    "carbon-components": "^10.32.0",
+    "carbon-components": "^10.33.0",
     "cross-env": "^7.0.3",
     "lodash": "^4.17.21",
     "nuxt": "^2.14.12",
@@ -42,6 +43,7 @@
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
     "@types/airtable": "^0.8.1",
     "@types/jest": "^26.0.22",
     "@types/lodash": "^4.14.168",
@@ -55,7 +57,7 @@
     "airtable": "^0.8.1",
     "babel-bridge": "^1.12.11",
     "babel-core": "^6.26.3",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.5",
@@ -71,7 +73,11 @@
     "nodemon": "^2.0.7",
     "sass-loader": "^10.1.1",
     "sass-mq": "^5.0.1",
-    "ts-jest": "^26.5.4",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-scss": "^3.19.0",
+    "ts-jest": "^26.5.5",
     "uslug": "^1.0.4",
     "vue-jest": "^3.0.7"
   }
