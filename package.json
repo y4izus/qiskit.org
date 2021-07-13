@@ -58,7 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "@vue/test-utils": "^1.2.0",
-    "airtable": "^0.8.1",
+    "airtable": "^0.11.1",
     "babel-bridge": "^1.12.11",
     "babel-core": "^6.26.3",
     "eslint": "^7.25.0",
